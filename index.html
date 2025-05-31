@@ -205,6 +205,12 @@
         .section {
             padding: 6rem 0;
             position: relative;
+            background: var(--bg-dark);
+            min-height: auto;
+        }
+
+        .section:nth-child(even) {
+            background: rgba(255, 255, 255, 0.02);
         }
 
         .container {
@@ -221,6 +227,15 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            font-weight: 700;
+            position: relative;
+        }
+
+        /* Fallback for browsers that don't support background-clip */
+        @supports not (-webkit-background-clip: text) {
+            .section-title {
+                color: var(--text-light);
+            }
         }
 
         /* About Section */
@@ -243,11 +258,18 @@
             font-size: 4rem;
             color: var(--text-light);
             box-shadow: var(--shadow);
+            margin: 0 auto;
         }
 
         .about-text {
             font-size: 1.1rem;
             line-height: 1.8;
+            color: var(--text-light);
+        }
+
+        .about-text p {
+            margin-bottom: 1.5rem;
+            opacity: 0.9;
         }
 
         .skills {
@@ -317,6 +339,7 @@
         .timeline-card:hover {
             transform: translateY(-5px);
             box-shadow: var(--shadow);
+            background: rgba(255, 255, 255, 0.15);
         }
 
         .timeline-date {
@@ -328,11 +351,18 @@
         .timeline-title {
             font-size: 1.3rem;
             margin-bottom: 0.5rem;
+            color: var(--text-light);
         }
 
         .timeline-company {
             color: var(--primary-color);
             margin-bottom: 1rem;
+            font-weight: 500;
+        }
+
+        .timeline-card p {
+            color: rgba(248, 249, 250, 0.8);
+            line-height: 1.6;
         }
 
         /* Projects */
@@ -583,8 +613,8 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
-            <h1>Hi, I'm Abhimanyu </h1>
-            <p>Associate Software Engineer</p>
+            <h1>Hi, I'm Your Name</h1>
+            <p>Full Stack Developer & UI/UX Designer</p>
             <a href="#about" class="cta-button">Explore My Work</a>
         </div>
     </section>
