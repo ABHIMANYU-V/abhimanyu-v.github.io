@@ -1,118 +1,327 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Abhimanyu V | Software Engineer</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Abhimanyu V - Portfolio</title>
+  <script src="https://cdn.jsdelivr.net/npm/react@18.2.0/umd/react.production.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/react-dom@18.2.0/umd/react-dom.production.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@babel/standalone@7.20.15/babel.min.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
   <style>
     body {
-      font-family: 'Segoe UI', sans-serif;
+      font-family: 'Inter', sans-serif;
       margin: 0;
       padding: 0;
-      background-color: #fdfdfd;
-      color: #222;
+      background: linear-gradient(135deg, #dbeafe 0%, #f9fafb 100%);
+      background-attachment: fixed;
+      background-image: url('data:image/svg+xml,%3Csvg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="%239C92AC" fill-opacity="0.05"%3E%3Cpath d="M0 0h20v20H0z"/%3E%3Ccircle cx="3" cy="3" r="1"/%3E%3Ccircle cx="17" cy="17" r="1"/%3E%3C/g%3E%3C/svg%3E'), linear-gradient(135deg, #dbeafe 0%, #f9fafb 100%);
     }
-    header {
-      background: #1e293b;
-      color: #fff;
-      padding: 2rem;
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+    .section {
+      padding: 4rem 0;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 0.6s ease-out forwards;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .section:hover {
+      transform: translateY(20px) scale(1.02);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    }
+    .section h2 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #1f2937;
+      margin-bottom: 2rem;
       text-align: center;
     }
-    header h1 {
+    .card {
+      background: rgba(255, 255, 255, 0.97);
+      border-radius: 0.5rem;
+      padding: 1.5rem;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      margin-bottom: 1.5rem;
+    }
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 1rem;
+    }
+    .skill-item {
+      background: #e5e7eb;
+      padding: 0.75rem;
+      border-radius: 0.25rem;
+      text-align: center;
+      font-weight: 500;
+      transition: transform 0.3s ease, background-color 0.3s ease;
+    }
+    .skill-item:hover {
+      transform: scale(1.1);
+      background-color: #14b8a6;
+      color: white;
+    }
+    nav {
+      position: sticky;
+      top: 0;
+      background: rgba(255, 255, 255, 0.97);
+      z-index: 10;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    nav ul {
+      display: flex;
+      justify-content: center;
+      list-style: none;
+      padding: 1rem 0;
       margin: 0;
-      font-size: 2rem;
     }
-    header p {
-      font-size: 1.1rem;
-      margin-top: 0.5rem;
+    nav ul li {
+      margin: 0 1.5rem;
+      position: relative;
     }
-    section {
-      padding: 2rem;
-      max-width: 900px;
-      margin: auto;
-    }
-    h2 {
-      border-bottom: 2px solid #ccc;
-      padding-bottom: 0.5rem;
-      margin-top: 2rem;
-    }
-    ul {
-      padding-left: 1.5rem;
-    }
-    a {
-      color: #1d4ed8;
+    nav ul li a {
+      color: #1f2937;
       text-decoration: none;
+      font-weight: 500;
+      font-size: 1.1rem;
+      transition: color 0.3s ease;
     }
-    a:hover {
+    nav ul li a:hover {
+      color: #14b8a6;
+    }
+    nav ul li a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: -4px;
+      left: 0;
+      background-color: #14b8a6;
+      transition: width 0.3s ease;
+    }
+    nav ul li a:hover::after {
+      width: 100%;
+    }
+    .hero {
+      background: linear-gradient(to right, #1e40af, #1e3a8a);
+      color: white;
+      text-align: center;
+      padding: 6rem 0;
+      opacity: 0;
+      animation: slideIn 1s ease-out forwards;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .hero:hover {
+      transform: scale(1.02);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    }
+    .contact-links a {
+      color: #14b8a6;
+      text-decoration: none;
+      margin-right: 1rem;
+      transition: color 0.3s ease;
+    }
+    .contact-links a:hover {
+      color: #0d9488;
       text-decoration: underline;
     }
-    footer {
-      background: #f3f4f6;
-      padding: 1rem;
+    .error-boundary {
+      padding: 2rem;
+      background: #fee2e2;
+      color: #991b1b;
       text-align: center;
-      font-size: 0.9rem;
-      color: #666;
+      margin: 1rem auto;
+      max-width: 1200px;
+      border-radius: 0.5rem;
+    }
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    @keyframes slideIn {
+      from {
+        opacity: 0;
+        transform: translateX(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+    @media (max-width: 640px) {
+      .section h2 {
+        font-size: 2rem;
+      }
+      nav ul {
+        flex-direction: column;
+        align-items: center;
+      }
+      nav ul li {
+        margin: 0.5rem 0;
+      }
+      .section:hover, .hero:hover {
+        transform: translateY(20px) scale(1.01);
+      }
     }
   </style>
 </head>
 <body>
+  <div id="root"></div>
+  <script type="text/babel">
+    // Error Boundary Component
+    class ErrorBoundary extends React.Component {
+      state = { hasError: false, error: null };
+      static getDerivedStateFromError(error) {
+        return { hasError: true, error };
+      }
+      render() {
+        if (this.state.hasError) {
+          return (
+            <div className="error-boundary">
+              <h2>Something went wrong.</h2>
+              <p>{this.state.error?.message || 'Unknown error occurred.'}</p>
+            </div>
+          );
+        }
+        return this.props.children;
+      }
+    }
 
-  <header>
-    <h1>Abhimanyu V</h1>
-    <p>Software Engineer | Java Backend Developer | Immediate Joiner</p>
-    <p>Tenkasi, Tamil Nadu, India</p>
-    <p>
-      📞 6383252500 | 
-      📧 <a href="mailto:iamabhimanyu38@gmail.com">iamabhimanyu38@gmail.com</a> | 
-      💼 <a href="https://www.linkedin.com/in/abhimanyu-v-610a98265" target="_blank">LinkedIn</a>
-    </p>
-  </header>
+    function Header() {
+      return (
+        <nav>
+          <ul>
+            <li><a href="#summary">Summary</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+      );
+    }
 
-  <section>
-    <h2>About Me</h2>
-    <p>
-      Associate Software Engineer with 2 years of hands-on experience building scalable, high-performance web applications using Java, Spring Boot, Spring Data JPA, and Redis.
-      Proven ability to take ownership of backend services and collaborate cross-functionally with frontend, DevOps, and QA teams. Immediate joiner with a strong foundation in system design, domain-driven development, and test-driven development.
-    </p>
-  </section>
+    function Hero() {
+      return (
+        <section id="summary" className="hero">
+          <div className="container">
+            <h1 className="text-4xl font-bold mb-4">Abhimanyu V</h1>
+            <h2 className="text-2xl mb-4">Software Engineer | Backend Developer | Immediate Joiner</h2>
+            <p className="text-lg max-w-3xl mx-auto">
+              Associate Software Engineer with 2 years of hands-on experience building scalable, high-performance web applications using Java, Spring Boot, Spring Data JPA, and Redis. Skilled in Apache Kafka, system design, domain-driven development, and test-driven development. Contributed to version 1 of a product at a product-based company, owning backend services and collaborating with cross-functional teams.
+            </p>
+          </div>
+        </section>
+      );
+    }
 
-  <section>
-    <h2>Top Skills</h2>
-    <ul>
-      <li>Java, Spring Boot, Spring Data JPA, Spring Security</li>
-      <li>JSON Web Token (JWT), Redis, Apache Kafka, RabbitMQ</li>
-      <li>RESTful APIs, Microservices, System Design</li>
-      <li>Agile Development, CI/CD, TDD, DDD</li>
-    </ul>
-  </section>
+    function Experience() {
+      return (
+        <section id="experience" className="section">
+          <div className="container">
+            <h2>Experience</h2>
+            <div className="card">
+              <h3 className="text-xl font-semibold">Associate Software Engineer</h3>
+              <p className="text-gray-600">T-Machine Software Solutions, Chennai, Tamil Nadu, India</p>
+              <p className="text-gray-500">July 2023 - June 2025 (2 years)</p>
+              <ul className="list-disc pl-5 mt-2 text-gray-700">
+                <li>Integrated Apache Kafka to manage high-throughput asynchronous event processing, supporting 100K+ daily messages across services.</li>
+                <li>Implemented Redis-based session management, improving user experience and reducing authentication latency by ~30%.</li>
+                <li>Contributed to an Agile development cycle, delivering over 90% of planned sprint deliverables consistently.</li>
+                <li>Helped set up and optimize CI/CD pipelines, reducing release overhead and enabling frequent, reliable deployments.</li>
+                <li>Developed and maintained 20+ RESTful APIs, enabling seamless communication between backend services and client-facing apps.</li>
+                <li>Collaborated with QA engineers in test-driven development to define test cases, reproduce edge cases, and ensure high product quality.</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+      );
+    }
 
-  <section>
-    <h2>Experience</h2>
-    <h3>T-Machine Software Solutions — Associate Software Engineer</h3>
-    <p><em>July 2023 – June 2025, Chennai, India</em></p>
-    <ul>
-      <li>Integrated Apache Kafka to manage high-throughput asynchronous event processing, supporting 100K+ daily messages.</li>
-      <li>Implemented Redis-based session management, improving authentication latency by ~30%.</li>
-      <li>Contributed to Agile sprints with over 90% of planned deliverables achieved consistently.</li>
-      <li>Developed and maintained 20+ REST APIs, enabling robust client-server integration.</li>
-      <li>Collaborated with QA on test-driven development to ensure quality across releases.</li>
-      <li>Optimized CI/CD pipelines, enabling frequent and reliable deployments.</li>
-    </ul>
-  </section>
+    function Skills() {
+      const skills = [
+        'Java', 'Spring Boot', 'Spring Data JPA', 'Spring Security', 'JSON Web Token (JWT)',
+        'Apache Kafka', 'Redis', 'RESTful APIs', 'System Design', 'Test-Driven Development',
+        'Domain-Driven Development', 'CI/CD'
+      ];
+      return (
+        <section id="skills" className="section">
+          <div className="container">
+            <h2>Skills</h2>
+            <div className="skills-grid">
+              {skills.map((skill, index) => (
+                <div key={index} className="skill-item">{skill}</div>
+              ))}
+            </div>
+          </div>
+        </section>
+      );
+    }
 
-  <section>
-    <h2>Education</h2>
-    <ul>
-      <li><strong>Bachelor of Engineering</strong>, Mechanical Engineering<br/>
-      P.S.R Engineering College, Sivakasi — Aug 2019 to June 2023</li>
-      <li><strong>Higher Secondary</strong>, Mathematics & Computer Science<br/>
-      Sri Kalaivani Matric. Hr. Sec. School — May 2018 to March 2019</li>
-    </ul>
-  </section>
+    function Education() {
+      return (
+        <section id="education" className="section">
+          <div className="container">
+            <h2>Education</h2>
+            <div className="card">
+              <h3 className="text-xl font-semibold">Bachelor of Engineering - Mechanical Engineering</h3>
+              <p className="text-gray-600">P.S.R Engineering College, Sivakasi</p>
+              <p className="text-gray-500">August 2019 - June 2023</p>
+            </div>
+            <div className="card">
+              <h3 className="text-xl font-semibold">Higher Secondary Education - Mathematics and Computer Science</h3>
+              <p className="text-gray-600">Sri Kalaivani Matric. Hr. Sec. School</p>
+              <p className="text-gray-500">May 2018 - March 2019</p>
+            </div>
+          </div>
+        </section>
+      );
+    }
 
-  <footer>
-    &copy; 2025 Abhimanyu V — Built with ❤️ and HTML
-  </footer>
+    function Contact() {
+      return (
+        <section id="contact" className="section">
+          <div className="container">
+            <h2>Contact</h2>
+            <div className="card">
+              <p className="text-gray-700">Tenkasi, Tamil Nadu, India</p>
+              <p className="text-gray-700">Phone: <a href="tel:+916383252500" className="contact-links">+91 6383252500</a></p>
+              <p className="text-gray-700">Email: <a href="mailto:iamabhimanyu38@gmail.com" className="contact-links">iamabhimanyu38@gmail.com</a></p>
+              <p className="text-gray-700">LinkedIn: <a href="https://www.linkedin.com/in/abhimanyuv-610a98265" target="_blank" rel="noopener noreferrer" className="contact-links">abhimanyuv-610a98265</a></p>
+            </div>
+          </div>
+        </section>
+      );
+    }
 
+    function App() {
+      return (
+        <ErrorBoundary>
+          <div>
+            <Header />
+            <Hero />
+            <Experience />
+            <Skills />
+            <Education />
+            <Contact />
+          </div>
+        </ErrorBoundary>
+      );
+    }
+
+    const root = ReactDOM.createRoot(document.getElementById('root'));
+    root.render(<App />);
+    console.log('Portfolio rendered successfully');
+  </script>
 </body>
 </html>
