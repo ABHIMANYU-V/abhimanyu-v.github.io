@@ -1,327 +1,621 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Abhimanyu V - Portfolio</title>
-  <script src="https://cdn.jsdelivr.net/npm/react@18.2.0/umd/react.production.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/react-dom@18.2.0/umd/react-dom.production.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@babel/standalone@7.20.15/babel.min.js"></script>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    body {
-      font-family: 'Inter', sans-serif;
-      margin: 0;
-      padding: 0;
-      background: linear-gradient(135deg, #dbeafe 0%, #f9fafb 100%);
-      background-attachment: fixed;
-      background-image: url('data:image/svg+xml,%3Csvg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="%239C92AC" fill-opacity="0.05"%3E%3Cpath d="M0 0h20v20H0z"/%3E%3Ccircle cx="3" cy="3" r="1"/%3E%3Ccircle cx="17" cy="17" r="1"/%3E%3C/g%3E%3C/svg%3E'), linear-gradient(135deg, #dbeafe 0%, #f9fafb 100%);
-    }
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 1rem;
-    }
-    .section {
-      padding: 4rem 0;
-      opacity: 0;
-      transform: translateY(20px);
-      animation: fadeInUp 0.6s ease-out forwards;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .section:hover {
-      transform: translateY(20px) scale(1.02);
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-    }
-    .section h2 {
-      font-size: 2.5rem;
-      font-weight: 700;
-      color: #1f2937;
-      margin-bottom: 2rem;
-      text-align: center;
-    }
-    .card {
-      background: rgba(255, 255, 255, 0.97);
-      border-radius: 0.5rem;
-      padding: 1.5rem;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      margin-bottom: 1.5rem;
-    }
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-      gap: 1rem;
-    }
-    .skill-item {
-      background: #e5e7eb;
-      padding: 0.75rem;
-      border-radius: 0.25rem;
-      text-align: center;
-      font-weight: 500;
-      transition: transform 0.3s ease, background-color 0.3s ease;
-    }
-    .skill-item:hover {
-      transform: scale(1.1);
-      background-color: #14b8a6;
-      color: white;
-    }
-    nav {
-      position: sticky;
-      top: 0;
-      background: rgba(255, 255, 255, 0.97);
-      z-index: 10;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    }
-    nav ul {
-      display: flex;
-      justify-content: center;
-      list-style: none;
-      padding: 1rem 0;
-      margin: 0;
-    }
-    nav ul li {
-      margin: 0 1.5rem;
-      position: relative;
-    }
-    nav ul li a {
-      color: #1f2937;
-      text-decoration: none;
-      font-weight: 500;
-      font-size: 1.1rem;
-      transition: color 0.3s ease;
-    }
-    nav ul li a:hover {
-      color: #14b8a6;
-    }
-    nav ul li a::after {
-      content: '';
-      position: absolute;
-      width: 0;
-      height: 2px;
-      bottom: -4px;
-      left: 0;
-      background-color: #14b8a6;
-      transition: width 0.3s ease;
-    }
-    nav ul li a:hover::after {
-      width: 100%;
-    }
-    .hero {
-      background: linear-gradient(to right, #1e40af, #1e3a8a);
-      color: white;
-      text-align: center;
-      padding: 6rem 0;
-      opacity: 0;
-      animation: slideIn 1s ease-out forwards;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .hero:hover {
-      transform: scale(1.02);
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-    }
-    .contact-links a {
-      color: #14b8a6;
-      text-decoration: none;
-      margin-right: 1rem;
-      transition: color 0.3s ease;
-    }
-    .contact-links a:hover {
-      color: #0d9488;
-      text-decoration: underline;
-    }
-    .error-boundary {
-      padding: 2rem;
-      background: #fee2e2;
-      color: #991b1b;
-      text-align: center;
-      margin: 1rem auto;
-      max-width: 1200px;
-      border-radius: 0.5rem;
-    }
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-    @keyframes slideIn {
-      from {
-        opacity: 0;
-        transform: translateX(-20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateX(0);
-      }
-    }
-    @media (max-width: 640px) {
-      .section h2 {
-        font-size: 2rem;
-      }
-      nav ul {
-        flex-direction: column;
-        align-items: center;
-      }
-      nav ul li {
-        margin: 0.5rem 0;
-      }
-      .section:hover, .hero:hover {
-        transform: translateY(20px) scale(1.01);
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abhimanyu V - Software Engineer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .glass-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 16px 64px rgba(0, 0, 0, 0.2);
+        }
+
+        .hero {
+            text-align: center;
+            color: white;
+            padding: 60px 0;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            background: linear-gradient(45deg, #fff, #e0e0e0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero .subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+            animation: fadeInUp 1s ease-out 0.3s both;
+        }
+
+        .hero .location {
+            font-size: 1.1rem;
+            opacity: 0.8;
+            animation: fadeInUp 1s ease-out 0.6s both;
+        }
+
+        .nav-pills {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 40px 0;
+            flex-wrap: wrap;
+        }
+
+        .nav-pill {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .nav-pill:hover, .nav-pill.active {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .section {
+            display: none;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        .section.active {
+            display: block;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 30px;
+            color: white;
+            text-align: center;
+        }
+
+        .summary-text {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.9);
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        .experience-item {
+            margin-bottom: 40px;
+            padding: 25px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            border-left: 4px solid #64ffda;
+        }
+
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+        }
+
+        .job-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: white;
+            margin-bottom: 5px;
+        }
+
+        .company {
+            font-size: 1.1rem;
+            color: #64ffda;
+            margin-bottom: 10px;
+        }
+
+        .duration {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.7);
+            background: rgba(255, 255, 255, 0.1);
+            padding: 4px 12px;
+            border-radius: 15px;
+        }
+
+        .achievements {
+            list-style: none;
+            margin-top: 20px;
+        }
+
+        .achievements li {
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 12px;
+            padding-left: 20px;
+            position: relative;
+            line-height: 1.6;
+        }
+
+        .achievements li:before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: #64ffda;
+            font-weight: bold;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .skill-category {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 25px;
+            border-radius: 15px;
+            border-top: 3px solid #64ffda;
+        }
+
+        .skill-category h3 {
+            color: white;
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skill-tag {
+            background: rgba(100, 255, 218, 0.2);
+            color: #64ffda;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            border: 1px solid rgba(100, 255, 218, 0.3);
+        }
+
+        .education-item {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 25px;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            border-left: 4px solid #ff6b6b;
+        }
+
+        .degree {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: white;
+            margin-bottom: 10px;
+        }
+
+        .institution {
+            font-size: 1.1rem;
+            color: #ff6b6b;
+            margin-bottom: 8px;
+        }
+
+        .year {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .contact-item {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .contact-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .contact-icon {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            color: #64ffda;
+        }
+
+        .contact-item h3 {
+            color: white;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        .contact-item a {
+            color: rgba(255, 255, 255, 0.9);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-item a:hover {
+            color: #64ffda;
+        }
+
+        .floating-nav {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 50px;
+            padding: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            z-index: 1000;
+        }
+
+        .floating-nav button {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 10px;
+            border-radius: 50%;
+            transition: background 0.3s ease;
+        }
+
+        .floating-nav button:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero .subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .experience-header {
+                flex-direction: column;
+            }
+            
+            .nav-pills {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .floating-nav {
+                bottom: 20px;
+                right: 20px;
+            }
+        }
+    </style>
 </head>
 <body>
-  <div id="root"></div>
-  <script type="text/babel">
-    // Error Boundary Component
-    class ErrorBoundary extends React.Component {
-      state = { hasError: false, error: null };
-      static getDerivedStateFromError(error) {
-        return { hasError: true, error };
-      }
-      render() {
-        if (this.state.hasError) {
-          return (
-            <div className="error-boundary">
-              <h2>Something went wrong.</h2>
-              <p>{this.state.error?.message || 'Unknown error occurred.'}</p>
+    <div class="container">
+        <!-- Hero Section -->
+        <div class="hero">
+            <h1>Abhimanyu V</h1>
+            <div class="subtitle">Software Engineer | Backend Engineer | Java Developer | Spring Boot Developer</div>
+            <div class="location">📍 Tenkasi, Tamil Nadu, India</div>
+        </div>
+
+        <!-- Navigation -->
+        <div class="nav-pills">
+            <button class="nav-pill active" onclick="showSection('summary')">Summary</button>
+            <button class="nav-pill" onclick="showSection('experience')">Experience</button>
+            <button class="nav-pill" onclick="showSection('skills')">Skills</button>
+            <button class="nav-pill" onclick="showSection('education')">Education</button>
+            <button class="nav-pill" onclick="showSection('contact')">Contact</button>
+        </div>
+
+        <!-- Summary Section -->
+        <div id="summary" class="section active">
+            <div class="glass-card">
+                <h2 class="section-title">About Me</h2>
+                <p class="summary-text">
+                    Associate Software Engineer with 2 years of hands-on experience building scalable, high-performance web applications using Java, Spring Boot, Spring Data JPA, and Redis. I've contributed to the successful development of version 1 of a product at a product-based company, taking ownership of backend services and collaborating with cross-functional teams including frontend, DevOps, and QA.
+                </p>
+                <br>
+                <p class="summary-text">
+                    I have highly transferable skills and foundational knowledge in RabbitMQ and Kafka. My experience includes system design capabilities, domain-driven development, and test-driven development practices. I'm an immediate joiner ready to contribute to your team's success.
+                </p>
             </div>
-          );
+        </div>
+
+        <!-- Experience Section -->
+        <div id="experience" class="section">
+            <div class="glass-card">
+                <h2 class="section-title">Experience</h2>
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div>
+                            <div class="job-title">Associate Software Engineer</div>
+                            <div class="company">T-Machine Software Solutions</div>
+                            <div class="year">Chennai, Tamil Nadu, India</div>
+                        </div>
+                        <div class="duration">July 2023 - June 2025 (2 years)</div>
+                    </div>
+                    <ul class="achievements">
+                        <li>Integrated Apache Kafka to manage high-throughput asynchronous event processing, supporting 100K+ daily messages across services</li>
+                        <li>Implemented Redis-based session management, improving user experience and reducing authentication latency by ~30%</li>
+                        <li>Contributed to an Agile development cycle, delivering over 90% of planned sprint deliverables consistently</li>
+                        <li>Helped set up and optimize CI/CD pipelines, reducing release overhead and enabling frequent, reliable deployments</li>
+                        <li>Developed and maintained 20+ RESTful APIs, enabling seamless communication between backend services and client-facing apps</li>
+                        <li>Experienced in working in test-driven development</li>
+                        <li>Collaborated closely with QA engineers to define test cases, reproduce edge cases, and ensure high product quality before releases</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Skills Section -->
+        <div id="skills" class="section">
+            <div class="glass-card">
+                <h2 class="section-title">Technical Skills</h2>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h3>Backend Technologies</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Java</span>
+                            <span class="skill-tag">Spring Boot</span>
+                            <span class="skill-tag">Spring Data JPA</span>
+                            <span class="skill-tag">Spring Security</span>
+                            <span class="skill-tag">RESTful APIs</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Databases & Caching</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Redis</span>
+                            <span class="skill-tag">SQL</span>
+                            <span class="skill-tag">NoSQL</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Message Queues</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Apache Kafka</span>
+                            <span class="skill-tag">RabbitMQ</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Security & Authentication</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">JSON Web Token (JWT)</span>
+                            <span class="skill-tag">Session Management</span>
+                            <span class="skill-tag">Authentication</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Development Practices</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Test-Driven Development</span>
+                            <span class="skill-tag">Domain-Driven Development</span>
+                            <span class="skill-tag">Agile Development</span>
+                            <span class="skill-tag">CI/CD</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3>System Design</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Microservices</span>
+                            <span class="skill-tag">System Architecture</span>
+                            <span class="skill-tag">Scalable Applications</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Education Section -->
+        <div id="education" class="section">
+            <div class="glass-card">
+                <h2 class="section-title">Education</h2>
+                <div class="education-item">
+                    <div class="degree">Bachelor of Engineering - BE, Mechanical Engineering</div>
+                    <div class="institution">P.S.R Engineering College, Sivakasi</div>
+                    <div class="year">August 2019 - June 2023</div>
+                </div>
+                <div class="education-item">
+                    <div class="degree">Higher Secondary Education</div>
+                    <div class="institution">Sri Kalaivani Matric Hr. Sec. School</div>
+                    <div class="year">May 2018 - March 2019</div>
+                    <div class="year">Mathematics and Computer Science</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact Section -->
+        <div id="contact" class="section">
+            <div class="glass-card">
+                <h2 class="section-title">Get In Touch</h2>
+                <div class="contact-grid">
+                    <div class="contact-item">
+                        <div class="contact-icon">📱</div>
+                        <h3>Phone</h3>
+                        <a href="tel:+916383252500">+91 6383252500</a>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">✉️</div>
+                        <h3>Email</h3>
+                        <a href="mailto:iamabhimanyu38@gmail.com">iamabhimanyu38@gmail.com</a>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">💼</div>
+                        <h3>LinkedIn</h3>
+                        <a href="https://www.linkedin.com/in/abhimanyuv-610a98265" target="_blank">Connect with me</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating Navigation -->
+    <div class="floating-nav">
+        <button onclick="scrollToTop()" title="Back to top">↑</button>
+    </div>
+
+    <script>
+        function showSection(sectionId) {
+            // Hide all sections
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => section.classList.remove('active'));
+            
+            // Show selected section
+            document.getElementById(sectionId).classList.add('active');
+            
+            // Update navigation pills
+            const pills = document.querySelectorAll('.nav-pill');
+            pills.forEach(pill => pill.classList.remove('active'));
+            event.target.classList.add('active');
+            
+            // Smooth scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         }
-        return this.props.children;
-      }
-    }
 
-    function Header() {
-      return (
-        <nav>
-          <ul>
-            <li><a href="#summary">Summary</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#education">Education</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-        </nav>
-      );
-    }
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
 
-    function Hero() {
-      return (
-        <section id="summary" className="hero">
-          <div className="container">
-            <h1 className="text-4xl font-bold mb-4">Abhimanyu V</h1>
-            <h2 className="text-2xl mb-4">Software Engineer | Backend Developer | Immediate Joiner</h2>
-            <p className="text-lg max-w-3xl mx-auto">
-              Associate Software Engineer with 2 years of hands-on experience building scalable, high-performance web applications using Java, Spring Boot, Spring Data JPA, and Redis. Skilled in Apache Kafka, system design, domain-driven development, and test-driven development. Contributed to version 1 of a product at a product-based company, owning backend services and collaborating with cross-functional teams.
-            </p>
-          </div>
-        </section>
-      );
-    }
+        // Add some interactive animations
+        document.addEventListener('DOMContentLoaded', function() {
+            // Animate cards on scroll
+            const cards = document.querySelectorAll('.glass-card');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.animation = 'fadeInUp 0.6s ease-out';
+                    }
+                });
+            });
 
-    function Experience() {
-      return (
-        <section id="experience" className="section">
-          <div className="container">
-            <h2>Experience</h2>
-            <div className="card">
-              <h3 className="text-xl font-semibold">Associate Software Engineer</h3>
-              <p className="text-gray-600">T-Machine Software Solutions, Chennai, Tamil Nadu, India</p>
-              <p className="text-gray-500">July 2023 - June 2025 (2 years)</p>
-              <ul className="list-disc pl-5 mt-2 text-gray-700">
-                <li>Integrated Apache Kafka to manage high-throughput asynchronous event processing, supporting 100K+ daily messages across services.</li>
-                <li>Implemented Redis-based session management, improving user experience and reducing authentication latency by ~30%.</li>
-                <li>Contributed to an Agile development cycle, delivering over 90% of planned sprint deliverables consistently.</li>
-                <li>Helped set up and optimize CI/CD pipelines, reducing release overhead and enabling frequent, reliable deployments.</li>
-                <li>Developed and maintained 20+ RESTful APIs, enabling seamless communication between backend services and client-facing apps.</li>
-                <li>Collaborated with QA engineers in test-driven development to define test cases, reproduce edge cases, and ensure high product quality.</li>
-              </ul>
-            </div>
-          </div>
-        </section>
-      );
-    }
+            cards.forEach(card => observer.observe(card));
 
-    function Skills() {
-      const skills = [
-        'Java', 'Spring Boot', 'Spring Data JPA', 'Spring Security', 'JSON Web Token (JWT)',
-        'Apache Kafka', 'Redis', 'RESTful APIs', 'System Design', 'Test-Driven Development',
-        'Domain-Driven Development', 'CI/CD'
-      ];
-      return (
-        <section id="skills" className="section">
-          <div className="container">
-            <h2>Skills</h2>
-            <div className="skills-grid">
-              {skills.map((skill, index) => (
-                <div key={index} className="skill-item">{skill}</div>
-              ))}
-            </div>
-          </div>
-        </section>
-      );
-    }
+            // Add typing effect to hero subtitle
+            const subtitle = document.querySelector('.hero .subtitle');
+            const originalText = subtitle.textContent;
+            subtitle.textContent = '';
+            
+            let i = 0;
+            const typeWriter = () => {
+                if (i < originalText.length) {
+                    subtitle.textContent += originalText.charAt(i);
+                    i++;
+                    setTimeout(typeWriter, 50);
+                }
+            };
+            
+            setTimeout(typeWriter, 1000);
+        });
 
-    function Education() {
-      return (
-        <section id="education" className="section">
-          <div className="container">
-            <h2>Education</h2>
-            <div className="card">
-              <h3 className="text-xl font-semibold">Bachelor of Engineering - Mechanical Engineering</h3>
-              <p className="text-gray-600">P.S.R Engineering College, Sivakasi</p>
-              <p className="text-gray-500">August 2019 - June 2023</p>
-            </div>
-            <div className="card">
-              <h3 className="text-xl font-semibold">Higher Secondary Education - Mathematics and Computer Science</h3>
-              <p className="text-gray-600">Sri Kalaivani Matric. Hr. Sec. School</p>
-              <p className="text-gray-500">May 2018 - March 2019</p>
-            </div>
-          </div>
-        </section>
-      );
-    }
+        // Add smooth hover effects
+        document.querySelectorAll('.skill-tag').forEach(tag => {
+            tag.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-2px)';
+                this.style.boxShadow = '0 4px 12px rgba(100, 255, 218, 0.3)';
+            });
+            
+            tag.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+                this.style.boxShadow = 'none';
+            });
+        });
 
-    function Contact() {
-      return (
-        <section id="contact" className="section">
-          <div className="container">
-            <h2>Contact</h2>
-            <div className="card">
-              <p className="text-gray-700">Tenkasi, Tamil Nadu, India</p>
-              <p className="text-gray-700">Phone: <a href="tel:+916383252500" className="contact-links">+91 6383252500</a></p>
-              <p className="text-gray-700">Email: <a href="mailto:iamabhimanyu38@gmail.com" className="contact-links">iamabhimanyu38@gmail.com</a></p>
-              <p className="text-gray-700">LinkedIn: <a href="https://www.linkedin.com/in/abhimanyuv-610a98265" target="_blank" rel="noopener noreferrer" className="contact-links">abhimanyuv-610a98265</a></p>
-            </div>
-          </div>
-        </section>
-      );
-    }
+        // Add particles effect (optional)
+        function createParticle() {
+            const particle = document.createElement('div');
+            particle.style.position = 'fixed';
+            particle.style.width = '4px';
+            particle.style.height = '4px';
+            particle.style.backgroundColor = 'rgba(255, 255, 255, 0.1)';
+            particle.style.borderRadius = '50%';
+            particle.style.pointerEvents = 'none';
+            particle.style.left = Math.random() * window.innerWidth + 'px';
+            particle.style.top = '-10px';
+            particle.style.zIndex = '1';
+            
+            document.body.appendChild(particle);
+            
+            const animation = particle.animate([
+                { transform: 'translateY(0px)', opacity: 1 },
+                { transform: `translateY(${window.innerHeight + 10}px)`, opacity: 0 }
+            ], {
+                duration: Math.random() * 3000 + 2000,
+                easing: 'linear'
+            });
+            
+            animation.onfinish = () => particle.remove();
+        }
 
-    function App() {
-      return (
-        <ErrorBoundary>
-          <div>
-            <Header />
-            <Hero />
-            <Experience />
-            <Skills />
-            <Education />
-            <Contact />
-          </div>
-        </ErrorBoundary>
-      );
-    }
-
-    const root = ReactDOM.createRoot(document.getElementById('root'));
-    root.render(<App />);
-    console.log('Portfolio rendered successfully');
-  </script>
+        // Create particles occasionally
+        setInterval(createParticle, 300);
+    </script>
 </body>
 </html>
