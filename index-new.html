@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio</title>
+  <meta name="description" content="Personal portfolio" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body>
+
+  <!-- ── CURSOR ───────────────────────────────────── -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-dot" id="cursorDot"></div>
+
+  <!-- ── NAV ──────────────────────────────────────── -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a href="#hero" class="nav-logo" id="navLogo">AC</a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#blog">Articles</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark/light mode">
+          <span class="theme-icon">☀</span>
+        </button>
+        <button class="nav-hamburger" id="hamburger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ── MOBILE MENU ───────────────────────────────── -->
+  <div class="mobile-menu" id="mobileMenu">
+    <ul id="mobileLinks"></ul>
+  </div>
+
+  <!-- ── MAIN ─────────────────────────────────────── -->
+  <main id="app">
+
+    <!-- HERO -->
+    <section id="hero" class="section hero-section">
+      <div class="hero-bg-grid"></div>
+      <div class="hero-content">
+        <div class="hero-badge" id="heroBadge">Available for work</div>
+        <h1 class="hero-name" id="heroName"></h1>
+        <p class="hero-tagline" id="heroTagline"></p>
+        <p class="hero-subtitle" id="heroSubtitle"></p>
+        <div class="hero-ctas" id="heroCtas"></div>
+        <div class="hero-scroll-hint">scroll</div>
+      </div>
+      <div class="hero-orb orb-1"></div>
+      <div class="hero-orb orb-2"></div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="section">
+      <div class="container">
+        <div class="section-label">01 — About</div>
+        <div class="about-grid">
+          <div class="about-text">
+            <h2 class="section-heading" id="aboutHeading"></h2>
+            <div class="about-bio" id="aboutBio"></div>
+            <div class="about-meta" id="aboutMeta"></div>
+          </div>
+          <div class="about-image-wrap">
+            <div class="about-image-frame">
+              <img id="aboutAvatar" src="" alt="Avatar" loading="lazy" />
+              <div class="about-image-deco"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="section">
+      <div class="container">
+        <div class="section-label">02 — Skills</div>
+        <h2 class="section-heading" id="skillsHeading"></h2>
+        <div class="skills-grid" id="skillsGrid"></div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="section">
+      <div class="container">
+        <div class="section-label">03 — Projects</div>
+        <h2 class="section-heading" id="projectsHeading"></h2>
+        <div class="projects-grid" id="projectsGrid"></div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience" class="section">
+      <div class="container">
+        <div class="section-label">04 — Experience</div>
+        <h2 class="section-heading" id="expHeading"></h2>
+        <div class="timeline" id="timeline"></div>
+      </div>
+    </section>
+
+    <!-- CERTIFICATIONS -->
+    <section id="certifications" class="section">
+      <div class="container">
+        <div class="section-label">05 — Certifications</div>
+        <h2 class="section-heading" id="certHeading"></h2>
+        <div class="certs-grid" id="certsGrid"></div>
+      </div>
+    </section>
+
+    <!-- BLOG -->
+    <section id="blog" class="section">
+      <div class="container">
+        <div class="section-label">06 — Writing</div>
+        <h2 class="section-heading" id="blogHeading"></h2>
+        <div class="blog-list" id="blogList"></div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section">
+      <div class="container">
+        <div class="section-label">07 — Contact</div>
+        <div class="contact-inner">
+          <h2 class="section-heading" id="contactHeading"></h2>
+          <p class="contact-sub" id="contactSub"></p>
+          <a class="contact-email" id="contactEmail" href=""></a>
+          <div class="social-row" id="socialRow"></div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ── FOOTER ────────────────────────────────────── -->
+  <footer id="footer">
+    <div class="footer-inner">
+      <span id="footerText"></span>
+      <span class="footer-year"></span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
