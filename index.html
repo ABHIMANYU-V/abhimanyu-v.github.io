@@ -1,621 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Abhimanyu V - Software Engineer</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        .glass-card {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 20px;
-            padding: 30px;
-            margin-bottom: 30px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .glass-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 16px 64px rgba(0, 0, 0, 0.2);
-        }
-
-        .hero {
-            text-align: center;
-            color: white;
-            padding: 60px 0;
-        }
-
-        .hero h1 {
-            font-size: 3.5rem;
-            font-weight: 700;
-            margin-bottom: 20px;
-            background: linear-gradient(45deg, #fff, #e0e0e0);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            animation: fadeInUp 1s ease-out;
-        }
-
-        .hero  {
-            font-size: 1.3rem;
-            margin-bottom: 30px;
-            opacity: 0.9;
-            animation: fadeInUp 1s ease-out 0.3s both;
-        }
-
-        .hero .location {
-            font-size: 1.1rem;
-            opacity: 0.8;
-            animation: fadeInUp 1s ease-out 0.6s both;
-        }
-
-        .nav-pills {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin: 40px 0;
-            flex-wrap: wrap;
-        }
-
-        .nav-pill {
-            background: rgba(255, 255, 255, 0.2);
-            color: white;
-            border: none;
-            padding: 12px 24px;
-            border-radius: 25px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            font-weight: 500;
-            text-decoration: none;
-            display: inline-block;
-        }
-
-        .nav-pill:hover, .nav-pill.active {
-            background: rgba(255, 255, 255, 0.3);
-            transform: translateY(-2px);
-        }
-
-        .section {
-            display: none;
-            animation: fadeIn 0.5s ease-in-out;
-        }
-
-        .section.active {
-            display: block;
-        }
-
-        .section-title {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 30px;
-            color: white;
-            text-align: center;
-        }
-
-        .summary-text {
-            font-size: 1.1rem;
-            color: rgba(255, 255, 255, 0.9);
-            text-align: center;
-            max-width: 800px;
-            margin: 0 auto;
-            line-height: 1.8;
-        }
-
-        .experience-item {
-            margin-bottom: 40px;
-            padding: 25px;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 15px;
-            border-left: 4px solid #64ffda;
-        }
-
-        .experience-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 15px;
-            flex-wrap: wrap;
-        }
-
-        .job-title {
-            font-size: 1.4rem;
-            font-weight: 600;
-            color: white;
-            margin-bottom: 5px;
-        }
-
-        .company {
-            font-size: 1.1rem;
-            color: #64ffda;
-            margin-bottom: 10px;
-        }
-
-        .duration {
-            font-size: 0.9rem;
-            color: rgba(255, 255, 255, 0.7);
-            background: rgba(255, 255, 255, 0.1);
-            padding: 4px 12px;
-            border-radius: 15px;
-        }
-
-        .achievements {
-            list-style: none;
-            margin-top: 20px;
-        }
-
-        .achievements li {
-            color: rgba(255, 255, 255, 0.9);
-            margin-bottom: 12px;
-            padding-left: 20px;
-            position: relative;
-            line-height: 1.6;
-        }
-
-        .achievements li:before {
-            content: "→";
-            position: absolute;
-            left: 0;
-            color: #64ffda;
-            font-weight: bold;
-        }
-
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            margin-top: 30px;
-        }
-
-        .skill-category {
-            background: rgba(255, 255, 255, 0.05);
-            padding: 25px;
-            border-radius: 15px;
-            border-top: 3px solid #64ffda;
-        }
-
-        .skill-category h3 {
-            color: white;
-            font-size: 1.3rem;
-            margin-bottom: 15px;
-            font-weight: 600;
-        }
-
-        .skill-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-
-        .skill-tag {
-            background: rgba(100, 255, 218, 0.2);
-            color: #64ffda;
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            font-weight: 500;
-            border: 1px solid rgba(100, 255, 218, 0.3);
-        }
-
-        .education-item {
-            background: rgba(255, 255, 255, 0.05);
-            padding: 25px;
-            border-radius: 15px;
-            margin-bottom: 20px;
-            border-left: 4px solid #ff6b6b;
-        }
-
-        .degree {
-            font-size: 1.3rem;
-            font-weight: 600;
-            color: white;
-            margin-bottom: 10px;
-        }
-
-        .institution {
-            font-size: 1.1rem;
-            color: #ff6b6b;
-            margin-bottom: 8px;
-        }
-
-        .year {
-            color: rgba(255, 255, 255, 0.7);
-            font-size: 0.9rem;
-        }
-
-        .contact-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 30px;
-        }
-
-        .contact-item {
-            background: rgba(255, 255, 255, 0.05);
-            padding: 25px;
-            border-radius: 15px;
-            text-align: center;
-            transition: transform 0.3s ease;
-        }
-
-        .contact-item:hover {
-            transform: translateY(-5px);
-        }
-
-        .contact-icon {
-            font-size: 2rem;
-            margin-bottom: 15px;
-            color: #64ffda;
-        }
-
-        .contact-item h3 {
-            color: white;
-            margin-bottom: 10px;
-            font-size: 1.2rem;
-        }
-
-        .contact-item a {
-            color: rgba(255, 255, 255, 0.9);
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .contact-item a:hover {
-            color: #64ffda;
-        }
-
-        .floating-nav {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border-radius: 50px;
-            padding: 15px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            z-index: 1000;
-        }
-
-        .floating-nav button {
-            background: none;
-            border: none;
-            color: white;
-            font-size: 1.5rem;
-            cursor: pointer;
-            padding: 10px;
-            border-radius: 50%;
-            transition: background 0.3s ease;
-        }
-
-        .floating-nav button:hover {
-            background: rgba(255, 255, 255, 0.2);
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-            
-            .hero .subtitle {
-                font-size: 1.1rem;
-            }
-            
-            .section-title {
-                font-size: 2rem;
-            }
-            
-            .experience-header {
-                flex-direction: column;
-            }
-            
-            .nav-pills {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .floating-nav {
-                bottom: 20px;
-                right: 20px;
-            }
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Abhimanyu V | Backend Developer</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <div class="container">
-        <!-- Hero Section -->
-        <div class="hero">
-            <h1>Abhimanyu V</h1>
-            <div class="subtitle">Associate software engineer</div>
-            <div class="location">📍 Tenkasi, Tamil Nadu, India</div>
-        </div>
 
-        <!-- Navigation -->
-        <div class="nav-pills">
-            <button class="nav-pill active" onclick="showSection('summary')">Summary</button>
-            <button class="nav-pill" onclick="showSection('experience')">Experience</button>
-            <button class="nav-pill" onclick="showSection('skills')">Skills</button>
-            <button class="nav-pill" onclick="showSection('education')">Education</button>
-            <button class="nav-pill" onclick="showSection('contact')">Contact</button>
-        </div>
+<header>
+  <h1>Abhimanyu V</h1>
+  <p>Backend Developer | Java | Spring Boot</p>
+  <div class="links">
+    <a href="mailto:iamabhimanyu38@gmail.com">Email</a>
+    <a href="https://github.com/abhimanyu-v">GitHub</a>
+    <a href="https://linkedin.com/in/abhimanyu-v">LinkedIn</a>
+  </div>
+</header>
 
-        <!-- Summary Section -->
-        <div id="summary" class="section active">
-            <div class="glass-card">
-                <h2 class="section-title">About Me</h2>
-                <p class="summary-text">
-                    Associate Software Engineer with 2 years of hands-on experience building scalable, high-performance web applications using Java, Spring Boot, Spring Data JPA, and Redis. I've contributed to the successful development of version 1 of a product at a product-based company, taking ownership of backend services and collaborating with cross-functional teams including frontend, DevOps, and QA.
-                </p>
-                <br>
-                <p class="summary-text">
-                    I have highly transferable skills and foundational knowledge in RabbitMQ and Kafka. My experience includes system design capabilities, domain-driven development, and test-driven development practices. I'm an immediate joiner ready to contribute to your team's success.
-                </p>
-            </div>
-        </div>
+<nav>
+  <a href="#about">About</a>
+  <a href="#experience">Experience</a>
+  <a href="#projects">Projects</a>
+  <a href="#skills">Skills</a>
+  <a href="#education">Education</a>
+</nav>
 
-        <!-- Experience Section -->
-        <div id="experience" class="section">
-            <div class="glass-card">
-                <h2 class="section-title">Experience</h2>
-                <div class="experience-item">
-                    <div class="experience-header">
-                        <div>
-                            <div class="job-title">Associate Software Engineer</div>
-                            <div class="company">T-Machine Software Solutions</div>
-                            <div class="year">Chennai, Tamil Nadu, India</div>
-                        </div>
-                        <div class="duration">July 2023 - June 2025 (2 years)</div>
-                    </div>
-                    <ul class="achievements">
-                        <li>Integrated Apache Kafka to manage high-throughput asynchronous event processing, supporting 100K+ daily messages across services</li>
-                        <li>Implemented Redis-based session management, improving user experience and reducing authentication latency by ~30%</li>
-                        <li>Contributed to an Agile development cycle, delivering over 90% of planned sprint deliverables consistently</li>
-                        <li>Helped set up and optimize CI/CD pipelines, reducing release overhead and enabling frequent, reliable deployments</li>
-                        <li>Developed and maintained 20+ RESTful APIs, enabling seamless communication between backend services and client-facing apps</li>
-                        <li>Experienced in working in test-driven development</li>
-                        <li>Collaborated closely with QA engineers to define test cases, reproduce edge cases, and ensure high product quality before releases</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
+<section id="about">
+  <h2>About</h2>
+  <p>
+    Software Engineer specializing in scalable backend systems using Java, Spring Boot,
+    and microservices. Experienced with Kafka, RabbitMQ, Redis, and Solr. Passionate
+    about clean architecture and system design.
+  </p>
+</section>
 
-        <!-- Skills Section -->
-        <div id="skills" class="section">
-            <div class="glass-card">
-                <h2 class="section-title">Technical Skills</h2>
-                <div class="skills-grid">
-                    <div class="skill-category">
-                        <h3>Backend Technologies</h3>
-                        <div class="skill-tags">
-                            <span class="skill-tag">Java</span>
-                            <span class="skill-tag">Spring Boot</span>
-                            <span class="skill-tag">Spring Data JPA</span>
-                            <span class="skill-tag">Spring Security</span>
-                            <span class="skill-tag">RESTful APIs</span>
-                        </div>
-                    </div>
-                    <div class="skill-category">
-                        <h3>Databases & Caching</h3>
-                        <div class="skill-tags">
-                            <span class="skill-tag">Redis</span>
-                            <span class="skill-tag">SQL</span>
-                            <span class="skill-tag">NoSQL</span>
-                        </div>
-                    </div>
-                    <div class="skill-category">
-                        <h3>Message Queues</h3>
-                        <div class="skill-tags">
-                            <span class="skill-tag">Apache Kafka</span>
-                            <span class="skill-tag">RabbitMQ</span>
-                        </div>
-                    </div>
-                    <div class="skill-category">
-                        <h3>Security & Authentication</h3>
-                        <div class="skill-tags">
-                            <span class="skill-tag">JSON Web Token (JWT)</span>
-                            <span class="skill-tag">Session Management</span>
-                            <span class="skill-tag">Authentication</span>
-                        </div>
-                    </div>
-                    <div class="skill-category">
-                        <h3>Development Practices</h3>
-                        <div class="skill-tags">
-                            <span class="skill-tag">Test-Driven Development</span>
-                            <span class="skill-tag">Domain-Driven Development</span>
-                            <span class="skill-tag">Agile Development</span>
-                            <span class="skill-tag">CI/CD</span>
-                        </div>
-                    </div>
-                    <div class="skill-category">
-                        <h3>System Design</h3>
-                        <div class="skill-tags">
-                            <span class="skill-tag">Microservices</span>
-                            <span class="skill-tag">System Architecture</span>
-                            <span class="skill-tag">Scalable Applications</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+<section id="experience">
+  <h2>Experience</h2>
 
-        <!-- Education Section -->
-        <div id="education" class="section">
-            <div class="glass-card">
-                <h2 class="section-title">Education</h2>
-                <div class="education-item">
-                    <div class="degree">Bachelor of Engineering - BE, Mechanical Engineering</div>
-                    <div class="institution">P.S.R Engineering College, Sivakasi</div>
-                    <div class="year">August 2019 - June 2023</div>
-                </div>
-                <div class="education-item">
-                    <div class="degree">Higher Secondary Education</div>
-                    <div class="institution">Sri Kalaivani Matric Hr. Sec. School</div>
-                    <div class="year">May 2018 - March 2019</div>
-                    <div class="year">Mathematics and Computer Science</div>
-                </div>
-            </div>
-        </div>
+  <div class="card">
+    <h3>Iprotecs Solutions Pvt Ltd</h3>
+    <span>Java Developer | Aug 2025 – Present</span>
+    <ul>
+      <li>Optimized authentication using Redis caching.</li>
+      <li>Implemented role-based access using Spring Security.</li>
+      <li>Built async systems using RabbitMQ with DLQ.</li>
+      <li>Integrated Solr & Kafka for scalable processing.</li>
+    </ul>
+  </div>
 
-        <!-- Contact Section -->
-        <div id="contact" class="section">
-            <div class="glass-card">
-                <h2 class="section-title">Get In Touch</h2>
-                <div class="contact-grid">
-                    <div class="contact-item">
-                        <div class="contact-icon">📱</div>
-                        <h3>Phone</h3>
-                        <a href="tel:+916383252500">+91 6383252500</a>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-icon">✉️</div>
-                        <h3>Email</h3>
-                        <a href="mailto:iamabhimanyu38@gmail.com">iamabhimanyu38@gmail.com</a>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-icon">💼</div>
-                        <h3>LinkedIn</h3>
-                        <a href="https://www.linkedin.com/in/abhimanyuv-610a98265" target="_blank">Connect with me</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+  <div class="card">
+    <h3>T-Machine Software Solutions</h3>
+    <span>Associate Software Engineer | Jul 2023 – Jun 2025</span>
+    <ul>
+      <li>Developed REST APIs using Spring Boot.</li>
+      <li>Improved performance using Redis caching.</li>
+      <li>Integrated Kafka for logging and tracking.</li>
+      <li>Worked in Agile & TDD environments.</li>
+    </ul>
+  </div>
 
-    <!-- Floating Navigation -->
-    <div class="floating-nav">
-        <button onclick="scrollToTop()" title="Back to top">↑</button>
-    </div>
+</section>
 
-    <script>
-        function showSection(sectionId) {
-            // Hide all sections
-            const sections = document.querySelectorAll('.section');
-            sections.forEach(section => section.classList.remove('active'));
-            
-            // Show selected section
-            document.getElementById(sectionId).classList.add('active');
-            
-            // Update navigation pills
-            const pills = document.querySelectorAll('.nav-pill');
-            pills.forEach(pill => pill.classList.remove('active'));
-            event.target.classList.add('active');
-            
-            // Smooth scroll to top
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
+<section id="projects">
+  <h2>Projects</h2>
 
-        function scrollToTop() {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
+  <div class="card">
+    <h3>Blog Management System</h3>
+    <ul>
+      <li>JWT authentication & role-based access.</li>
+      <li>Redis caching improved performance by 60%.</li>
+      <li>15+ REST APIs with clean architecture.</li>
+    </ul>
+  </div>
 
-        // Add some interactive animations
-        document.addEventListener('DOMContentLoaded', function() {
-            // Animate cards on scroll
-            const cards = document.querySelectorAll('.glass-card');
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.animation = 'fadeInUp 0.6s ease-out';
-                    }
-                });
-            });
+  <div class="card">
+    <h3>Event Booking Application</h3>
+    <ul>
+      <li>Spring Boot + JPA based backend.</li>
+      <li>Role-based authentication with JWT.</li>
+      <li>Optimized relational DB schema.</li>
+    </ul>
+  </div>
 
-            cards.forEach(card => observer.observe(card));
+</section>
 
-            // Add typing effect to hero subtitle
-            const subtitle = document.querySelector('.hero .subtitle');
-            const originalText = subtitle.textContent;
-            subtitle.textContent = '';
-            
-            let i = 0;
-            const typeWriter = () => {
-                if (i < originalText.length) {
-                    subtitle.textContent += originalText.charAt(i);
-                    i++;
-                    setTimeout(typeWriter, 50);
-                }
-            };
-            
-            setTimeout(typeWriter, 1000);
-        });
+<section id="skills">
+  <h2>Skills</h2>
+  <p>
+    Java, SQL, Spring Boot, Spring Security, JPA, Hibernate, MySQL, PostgreSQL,
+    Redis, Kafka, RabbitMQ, Solr, Flink, REST APIs, Git, Maven
+  </p>
+</section>
 
-        // Add smooth hover effects
-        document.querySelectorAll('.skill-tag').forEach(tag => {
-            tag.addEventListener('mouseenter', function() {
-                this.style.transform = 'translateY(-2px)';
-                this.style.boxShadow = '0 4px 12px rgba(100, 255, 218, 0.3)';
-            });
-            
-            tag.addEventListener('mouseleave', function() {
-                this.style.transform = 'translateY(0)';
-                this.style.boxShadow = 'none';
-            });
-        });
+<section id="education">
+  <h2>Education</h2>
+  <p>
+    B.E Mechanical Engineering — P.S.R Engineering College (2019–2023)<br/>
+    CGPA: 8.038
+  </p>
+</section>
 
-        // Add particles effect (optional)
-        function createParticle() {
-            const particle = document.createElement('div');
-            particle.style.position = 'fixed';
-            particle.style.width = '4px';
-            particle.style.height = '4px';
-            particle.style.backgroundColor = 'rgba(255, 255, 255, 0.1)';
-            particle.style.borderRadius = '50%';
-            particle.style.pointerEvents = 'none';
-            particle.style.left = Math.random() * window.innerWidth + 'px';
-            particle.style.top = '-10px';
-            particle.style.zIndex = '1';
-            
-            document.body.appendChild(particle);
-            
-            const animation = particle.animate([
-                { transform: 'translateY(0px)', opacity: 1 },
-                { transform: `translateY(${window.innerHeight + 10}px)`, opacity: 0 }
-            ], {
-                duration: Math.random() * 3000 + 2000,
-                easing: 'linear'
-            });
-            
-            animation.onfinish = () => particle.remove();
-        }
+<footer>
+  <p>© 2026 Abhimanyu V</p>
+</footer>
 
-        // Create particles occasionally
-        setInterval(createParticle, 300);
-    </script>
+<script src="script.js"></script>
 </body>
 </html>
