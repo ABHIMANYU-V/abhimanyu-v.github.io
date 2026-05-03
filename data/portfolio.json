@@ -1,0 +1,221 @@
+{
+  "profile": {
+    "name": "Abhimanyu V",
+    "title": "Java Backend Engineer",
+    "subtitle": "Building scalable backend systems with Spring Boot, Kafka, Redis & Distributed Architectures",
+    "location": "Tenkasi, Tamil Nadu, India",
+    "email": "iamabhimanyu38@gmail.com",
+    "phone": "+91 6383252500",
+    "website": "https://abhimanyu-v.github.io",
+    "linkedin": "https://linkedin.com/in/abhimanyu",
+    "github": "https://github.com/abhimanyu-v"
+  },
+
+  "about": {
+    "summary": "Software Engineer skilled in scalable Java backend development with Spring Boot, microservices, and RESTful APIs. Experienced in distributed systems using Apache Kafka, RabbitMQ, Redis, and search technologies like Apache Solr, with working knowledge of Apache Flink. Focused on building clean, maintainable systems and growing in system design and backend architecture."
+  },
+
+  "metrics": [
+    {
+      "label": "REST APIs Designed",
+      "value": "15+"
+    },
+    {
+      "label": "Caching Layer",
+      "value": "Redis"
+    },
+    {
+      "label": "Async Messaging",
+      "value": "Kafka + RabbitMQ"
+    },
+    {
+      "label": "Architecture",
+      "value": "Microservices"
+    }
+  ],
+
+  "experience": [
+    {
+      "company": "Iprotecs Solutions Pvt Ltd",
+      "role": "Java Developer",
+      "duration": "Aug 2025 - Present",
+      "location": "Coimbatore, India",
+      "products": [
+        {
+          "name": "dforce",
+          "highlights": [
+            "Developed REST APIs",
+            "Optimized authentication by caching permissions in Redis",
+            "Reduced repeated database calls during token validation",
+            "Implemented role-based access with Spring Security",
+            "Used TreeMap for chronologically sorted calendar UI data",
+            "Implemented RabbitMQ + Dead Letter Queue",
+            "Integrated async Solr indexing in microservices"
+          ],
+          "stack": [
+            "Java",
+            "Spring Boot",
+            "Spring Security",
+            "Redis",
+            "RabbitMQ",
+            "Apache Solr"
+          ]
+        },
+        {
+          "name": "dhire.ai",
+          "highlights": [
+            "Built REST APIs for workflow management",
+            "Implemented interview scheduling logic",
+            "Published email events using RabbitMQ",
+            "Python microservice consumed async email queue",
+            "Implemented enterprise SSO via Keycloak",
+            "Dynamic routing to Azure AD / Okta",
+            "Applied SOLID principles"
+          ],
+          "stack": [
+            "Java",
+            "Spring Boot",
+            "RabbitMQ",
+            "Python",
+            "Keycloak",
+            "Azure AD",
+            "Okta"
+          ]
+        },
+        {
+          "name": "dhelix",
+          "highlights": [
+            "Integrated Apache Solr search",
+            "Resolved Apache Flink connection leaks",
+            "Prevented resource exhaustion",
+            "Implemented Kafka-based async messaging"
+          ],
+          "stack": [
+            "Java",
+            "Spring Boot",
+            "Apache Kafka",
+            "Apache Flink",
+            "Apache Solr"
+          ]
+        }
+      ]
+    },
+
+    {
+      "company": "T-Machine Software Solutions",
+      "role": "Associate Software Engineer",
+      "duration": "Jul 2023 - Jun 2025",
+      "location": "Chennai, India",
+      "highlights": [
+        "Developed RESTful APIs using Spring Boot",
+        "Implemented Redis caching",
+        "Integrated Kafka for event logging",
+        "Worked in Agile sprint cycles",
+        "Collaborated in TDD environment"
+      ],
+      "stack": [
+        "Java",
+        "Spring Boot",
+        "Redis",
+        "Apache Kafka",
+        "Git",
+        "Postman"
+      ]
+    }
+  ],
+
+  "projects": [
+    {
+      "name": "Backend Blog Management System",
+      "description": "Secure multi-role backend platform with JWT auth, BCrypt encryption, Redis caching, analytics APIs, moderation workflows and modular scalable architecture.",
+      "features": [
+        "JWT Authentication",
+        "BCrypt Encryption",
+        "Redis Caching",
+        "15+ APIs",
+        "Admin Moderation",
+        "Audit Logging",
+        "Analytics"
+      ],
+      "tech": [
+        "Java",
+        "Spring Boot",
+        "Spring Security",
+        "Redis",
+        "MySQL"
+      ],
+      "github": "#"
+    },
+
+    {
+      "name": "Event Booking Application",
+      "description": "Secure event booking backend using JWT authentication, RBAC, optimized relational schema design and modular service-repository architecture.",
+      "features": [
+        "JWT Auth",
+        "Role Based Access",
+        "Admin Event Management",
+        "Booking System",
+        "JPA Entity Modeling",
+        "Scalable Design"
+      ],
+      "tech": [
+        "Java",
+        "Spring Boot",
+        "Spring Security",
+        "JPA",
+        "MySQL"
+      ],
+      "github": "#"
+    }
+  ],
+
+  "skills": {
+    "languages": [
+      "Java",
+      "SQL"
+    ],
+    "frameworks": [
+      "Spring Boot",
+      "Spring Security",
+      "Spring Data JPA",
+      "Hibernate"
+    ],
+    "databases": [
+      "MySQL",
+      "PostgreSQL",
+      "Redis"
+    ],
+    "messaging": [
+      "Apache Kafka",
+      "RabbitMQ"
+    ],
+    "search_processing": [
+      "Apache Solr",
+      "Apache Flink"
+    ],
+    "tools": [
+      "Git",
+      "GitHub",
+      "Postman",
+      "Swagger",
+      "Maven",
+      "IntelliJ IDEA",
+      "VS Code"
+    ],
+    "concepts": [
+      "Microservices",
+      "REST APIs",
+      "SOLID",
+      "OOP",
+      "System Design Basics",
+      "Agile",
+      "TDD"
+    ]
+  },
+
+  "education": {
+    "college": "P.S.R Engineering College",
+    "degree": "B.E Mechanical Engineering",
+    "cgpa": "8.038 / 10"
+  }
+}
