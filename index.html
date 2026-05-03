@@ -2,39 +2,325 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Abhimanyu V | Backend Developer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Abhimanyu V | Java Backend Engineer</title>
+  <meta
+    name="description"
+    content="Java Backend Engineer specializing in Spring Boot, Kafka, Redis, RabbitMQ, Solr and distributed systems."
+  />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Icons -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+  />
+
+  <!-- AOS -->
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/aos@2.3.1/dist/aos.css"
+  />
+
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-<header>
-  <h1>Abhimanyu V</h1>
-  <p>Backend Developer | Java | Spring Boot</p>
-  <div class="links">
-    <a href="mailto:iamabhimanyu38@gmail.com">Email</a>
-    <a href="https://github.com/abhimanyu-v">GitHub</a>
-    <a href="https://linkedin.com/in/abhimanyu-v">LinkedIn</a>
-  </div>
-</header>
+  <!-- Background -->
+  <div class="bg-grid"></div>
+  <div class="bg-glow glow-1"></div>
+  <div class="bg-glow glow-2"></div>
 
-<nav>
-  <a href="#about">About</a>
-  <a href="#experience">Experience</a>
-  <a href="#projects">Projects</a>
-  <a href="#skills">Skills</a>
-  <a href="#education">Education</a>
-</nav>
+  <!-- Header -->
+  <header class="header">
+    <div class="container nav">
+      <a href="#" class="logo">
+        <span>&lt;/&gt;</span> Abhimanyu
+      </a>
 
-<section id="about">
-  <h2>About</h2>
-  <p>
-    Software Engineer specializing in scalable backend systems using Java, Spring Boot,
-    and microservices. Experienced with Kafka, RabbitMQ, Redis, and Solr. Passionate
-    about clean architecture and system design.
-  </p>
-</section>
+      <nav class="nav-links">
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
 
+      <a href="assets/resume.pdf" class="resume-btn" download>
+        Resume
+      </a>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container hero-grid">
+
+      <div class="hero-left" data-aos="fade-up">
+        <p class="eyebrow">JAVA BACKEND ENGINEER</p>
+
+        <h1>
+          Building scalable backend systems with
+          <span>Spring Boot, Kafka, Redis</span>
+          & distributed architectures.
+        </h1>
+
+        <p class="hero-desc">
+          Backend engineer focused on clean architecture, microservices,
+          asynchronous messaging, caching strategies, secure authentication,
+          and scalable distributed systems.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#projects" class="btn btn-primary">View Projects</a>
+          <a href="assets/resume.pdf" download class="btn btn-secondary">
+            Download Resume
+          </a>
+        </div>
+
+        <div class="socials">
+          <a href="https://github.com/abhimanyu-v" target="_blank">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="https://linkedin.com/in/abhimanyu" target="_blank">
+            <i class="fab fa-linkedin"></i>
+          </a>
+          <a href="mailto:iamabhimanyu38@gmail.com">
+            <i class="fa-solid fa-envelope"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-right" data-aos="zoom-in">
+        <div class="profile-card">
+          <img src="assets/profile.jpg" alt="Abhimanyu V" />
+
+          <div class="status-pill">
+            <span class="dot"></span>
+            Available for opportunities
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Engineering Dashboard -->
+  <section class="dashboard">
+    <div class="container">
+
+      <div class="section-title">
+        <p>ENGINEERING SNAPSHOT</p>
+        <h2>Systems, Scale & Architecture</h2>
+      </div>
+
+      <div class="metrics-grid">
+
+        <div class="metric-card" data-aos="fade-up">
+          <h3>15+</h3>
+          <p>REST APIs Designed</p>
+        </div>
+
+        <div class="metric-card" data-aos="fade-up" data-aos-delay="100">
+          <h3>Redis</h3>
+          <p>Caching Optimizations</p>
+        </div>
+
+        <div class="metric-card" data-aos="fade-up" data-aos-delay="200">
+          <h3>Kafka + RabbitMQ</h3>
+          <p>Async Event Pipelines</p>
+        </div>
+
+        <div class="metric-card" data-aos="fade-up" data-aos-delay="300">
+          <h3>Microservices</h3>
+          <p>Distributed Systems</p>
+        </div>
+
+      </div>
+
+      <div class="terminal-card" data-aos="fade-up">
+<pre id="terminalText">
+$ boot engineer-profile
+
+✓ Spring Boot APIs initialized
+✓ Redis caching enabled
+✓ Kafka stream connected
+✓ RabbitMQ messaging active
+✓ Apache Solr indexing online
+✓ Keycloak SSO configured
+
+STATUS: Production Ready
+</pre>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="about section">
+    <div class="container narrow" data-aos="fade-up">
+      <div class="section-title">
+        <p>ABOUT</p>
+        <h2>Engineer Mindset</h2>
+      </div>
+
+      <p class="about-text">
+        Software Engineer skilled in scalable Java backend development with
+        Spring Boot, Microservices, REST APIs, Redis caching, Kafka,
+        RabbitMQ, Apache Solr and distributed system architecture.
+        Focused on building clean, maintainable and production-grade systems.
+      </p>
+    </div>
+  </section>
+
+  <!-- Experience -->
+  <section id="experience" class="experience section">
+    <div class="container">
+      <div class="section-title">
+        <p>WORK EXPERIENCE</p>
+        <h2>Professional Journey</h2>
+      </div>
+
+      <div class="timeline">
+
+        <div class="timeline-item" data-aos="fade-right">
+          <div class="timeline-content">
+            <span class="timeline-date">2025 — Present</span>
+            <h3>Iprotecs Solutions Pvt Ltd</h3>
+            <h4>Java Developer</h4>
+            <p>
+              Built scalable APIs, Redis-backed auth caching, RabbitMQ async
+              flows, Kafka systems, Solr indexing, and enterprise SSO routing
+              with Keycloak + Azure AD + Okta.
+            </p>
+
+            <div class="stack">
+              <i class="devicon-java-plain colored"></i>
+              <i class="devicon-spring-plain colored"></i>
+              <i class="devicon-redis-plain colored"></i>
+              <i class="devicon-rabbitmq-original colored"></i>
+              <i class="devicon-apachekafka-original colored"></i>
+              <i class="devicon-python-plain colored"></i>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item" data-aos="fade-left">
+          <div class="timeline-content">
+            <span class="timeline-date">2023 — 2025</span>
+            <h3>T-Machine Software Solutions</h3>
+            <h4>Associate Software Engineer</h4>
+            <p>
+              Developed Spring Boot APIs, Redis caching, Kafka audit logging,
+              Agile sprint delivery, and TDD collaboration with QA teams.
+            </p>
+
+            <div class="stack">
+              <i class="devicon-java-plain colored"></i>
+              <i class="devicon-spring-plain colored"></i>
+              <i class="devicon-redis-plain colored"></i>
+              <i class="devicon-apachekafka-original colored"></i>
+              <i class="devicon-git-plain colored"></i>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills" class="skills section">
+    <div class="container">
+      <div class="section-title">
+        <p>TECH STACK</p>
+        <h2>Core Technologies</h2>
+      </div>
+
+      <div class="icon-cloud">
+        <i class="devicon-java-plain colored"></i>
+        <i class="devicon-spring-plain colored"></i>
+        <i class="devicon-mysql-plain colored"></i>
+        <i class="devicon-postgresql-plain colored"></i>
+        <i class="devicon-redis-plain colored"></i>
+        <i class="devicon-apachekafka-original colored"></i>
+        <i class="devicon-rabbitmq-original colored"></i>
+        <i class="devicon-python-plain colored"></i>
+        <i class="devicon-git-plain colored"></i>
+        <i class="devicon-github-original colored"></i>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects" class="projects section">
+    <div class="container">
+      <div class="section-title">
+        <p>PROJECTS</p>
+        <h2>Selected Work</h2>
+      </div>
+
+      <div class="project-grid">
+
+        <div class="project-card" data-aos="fade-up">
+          <h3>Backend Blog Management System</h3>
+          <p>
+            Multi-role secure backend using JWT auth, BCrypt encryption,
+            Redis caching, analytics APIs, moderation workflows,
+            and scalable modular architecture.
+          </p>
+        </div>
+
+        <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+          <h3>Event Booking Application</h3>
+          <p>
+            Secure event management platform using Spring Boot,
+            JWT auth, RBAC, relational schema design and
+            service-repository architecture.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="contact section">
+    <div class="container narrow center">
+      <div class="section-title">
+        <p>CONTACT</p>
+        <h2>Let's Build Something</h2>
+      </div>
+
+      <p>
+        Interested in backend engineering opportunities,
+        distributed systems, or scalable architecture work.
+      </p>
+
+      <a href="mailto:iamabhimanyu38@gmail.com" class="btn btn-primary">
+        Contact Me
+      </a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>© 2026 Abhimanyu V • Built with engineering precision</p>
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="script.js"></script>
+</body>
+  </html>
 <section id="experience">
   <h2>Experience</h2>
 
