@@ -2,420 +2,250 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Abhimanyu V | Java Backend Engineer</title>
-  <meta
-    name="description"
-    content="Java Backend Engineer specializing in Spring Boot, Kafka, Redis, RabbitMQ, Solr and distributed systems."
-  />
-
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
-    rel="stylesheet"
-  />
-
-  <!-- Icons -->
-  <link
-    rel="stylesheet"
-    href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
-  />
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-  />
-
-  <!-- AOS -->
-  <link
-    rel="stylesheet"
-    href="https://unpkg.com/aos@2.3.1/dist/aos.css"
-  />
-
-  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --royal-green: #10b981;
+      --dark-green: #0a3d2a;
+      --accent-green: #34d399;
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+    .heading-font {
+      font-family: 'Space Grotesk', sans-serif;
+    }
+    .hero-bg {
+      background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.9)), url('https://images.unsplash.com/photo-1518770660439-4636190af475?w=1200') center/cover no-repeat;
+    }
+    .nav-link {
+      transition: all 0.3s ease;
+    }
+    .nav-link:hover {
+      color: var(--royal-green);
+      transform: translateY(-2px);
+    }
+    .skill-bar {
+      height: 6px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 9999px;
+      overflow: hidden;
+    }
+    .skill-progress {
+      height: 100%;
+      background: linear-gradient(90deg, #10b981, #34d399);
+      border-radius: 9999px;
+    }
+  </style>
 </head>
-<body>
+<body class="bg-[#0a0f14] text-white">
 
-  <!-- Background -->
-  <div class="bg-grid"></div>
-  <div class="bg-glow glow-1"></div>
-  <div class="bg-glow glow-2"></div>
-
-  <!-- Header -->
-  <header class="header">
-    <div class="container nav">
-      <a href="#" class="logo">
-        <span>&lt;/&gt;</span> Abhimanyu
-      </a>
-
-      <nav class="nav-links ">
-        <a href="#about">About</a>
-        <a href="#experience">Experience</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
+  <!-- HEADER -->
+  <header class="sticky top-0 z-50 bg-[#0a0f14]/90 backdrop-blur-lg border-b border-white/10">
+    <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
+      <div class="flex items-center gap-3">
+        <span class="text-2xl font-bold text-emerald-400">&lt;/&gt;</span>
+        <span class="text-2xl font-semibold heading-font">Abhimanyu V</span>
+      </div>
+      <nav class="hidden md:flex gap-10 text-lg">
+        <a href="#about" class="nav-link text-gray-300 hover:text-white">About</a>
+        <a href="#experience" class="nav-link text-gray-300 hover:text-white">Experience</a>
+        <a href="#skills" class="nav-link text-gray-300 hover:text-white">Skills</a>
+        <a href="#projects" class="nav-link text-gray-300 hover:text-white">Projects</a>
       </nav>
-
-      <a href="assets/resume.pdf" class="resume-btn" download>
+      <a href="assets/resume.pdf" download class="px-6 py-3 bg-emerald-500 hover:bg-emerald-600 rounded-2xl font-medium transition">
         Resume
       </a>
     </div>
   </header>
 
-  <!-- <section>
-    <div class="container">
-
-    
-    <div class="objective">
- <div class="profile-card">
-          <img src="assets/profile.jpg" alt="Abhimanyu V" />
-
-          <div class="status-pill">
-            <span class="dot"></span>
-            Available for opportunities
-          </div>
-        </div>
-           <div>
-        <p>
-          Lorem Ipsum is dummy text commonly used in graphic design, publishing, and web development. Its primary purpose is to allow designers to create layouts without the distraction of meaningful content. This helps to focus on the visual aspects of a design, such as typography and layout, rather than the actual text.
-        </p>
-      </div>
-      </div>
-   
-</div>
-    
-  </section> -->
-
-  <!-- Hero -->
-  <section class="hero">
-    <div class="container hero-grid">
-
-      <div class="hero-left" data-aos="fade-up">
-        <p class="eyebrow">JAVA BACKEND ENGINEER</p>
-
-        <h1>
-          Building scalable backend systems with
-          <span>Spring Boot, Kafka, Redis</span>
-          & distributed architectures.
+  <!-- HERO -->
+  <section class="hero-bg min-h-screen flex items-center">
+    <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+      <div class="space-y-8">
+        <h1 class="text-7xl md:text-8xl font-bold heading-font leading-tight">
+          ABHIMANYU<br><span class="text-emerald-400">V</span>
         </h1>
-
-        <p class="hero-desc">
-          Backend engineer focused on clean architecture, microservices,
-          asynchronous messaging, caching strategies, secure authentication,
-          and scalable distributed systems.
+        <p class="text-3xl text-gray-300">Java Backend Engineer</p>
+        
+        <p class="text-xl text-gray-400 max-w-lg">
+          Building scalable, high-performance backend systems with Spring Boot, Kafka, Redis & distributed architectures.
         </p>
 
-        <div class="hero-actions">
-          <a href="#projects" class="btn btn-primary">View Projects</a>
-          <a href="assets/resume.pdf" download class="btn btn-secondary">
+        <div class="flex flex-wrap gap-5">
+          <a href="#projects" class="px-8 py-4 bg-white text-black font-semibold rounded-2xl hover:scale-105 transition">
+            View Projects
+          </a>
+          <a href="assets/resume.pdf" download class="px-8 py-4 border border-white/30 hover:border-emerald-400 rounded-2xl font-medium transition">
             Download Resume
           </a>
         </div>
 
-        <div class="socials">
-          <a href="https://github.com/abhimanyu-v" target="_blank">
-            <i class="fab fa-github"></i>
-          </a>
-          <a href="https://linkedin.com/in/abhimanyu" target="_blank">
-            <i class="fab fa-linkedin"></i>
-          </a>
-          <a href="mailto:iamabhimanyu38@gmail.com">
-            <i class="fa-solid fa-envelope"></i>
-          </a>
+        <div class="flex gap-6 text-3xl">
+          <a href="https://github.com/abhimanyu-v" target="_blank" class="hover:text-emerald-400 transition"><i class="fab fa-github"></i></a>
+          <a href="https://linkedin.com/in/abhimanyu" target="_blank" class="hover:text-emerald-400 transition"><i class="fab fa-linkedin"></i></a>
+          <a href="mailto:iamabhimanyu38@gmail.com" class="hover:text-emerald-400 transition"><i class="fas fa-envelope"></i></a>
         </div>
       </div>
 
-       <div class="hero-right" data-aos="zoom-out">
-        <div class="profile-card">
-          <img src="assets/profile.jpg" alt="Abhimanyu V" />
-
-          <div class="status-pill">
-            <span class="dot"></span>
-            Available for opportunities
+      <div class="hidden md:flex justify-end">
+        <div class="relative">
+          <img src="assets/profile.jpg" alt="Abhimanyu V" class="w-96 rounded-3xl shadow-2xl border border-emerald-500/20"/>
+          <div class="absolute -bottom-4 -right-4 bg-[#0a0f14] border border-emerald-500/30 rounded-2xl px-6 py-3 flex items-center gap-3">
+            <div class="w-3 h-3 bg-emerald-500 rounded-full animate-pulse"></div>
+            <span class="text-sm">Available for opportunities</span>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-
-  <!-- Engineering Dashboard -->
-  <section class="dashboard">
-    <div class="container">
-
-      <div class="section-title">
-        <p>ENGINEERING SNAPSHOT</p>
-        <h2>Systems, Scale & Architecture</h2>
+  <!-- ABOUT -->
+  <section id="about" class="py-24 bg-[#0a0f14]">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid md:grid-cols-2 gap-16 items-center">
+        <div>
+          <h2 class="text-5xl font-bold heading-font mb-6">About Me</h2>
+          <p class="text-gray-300 text-lg leading-relaxed">
+            Software Engineer skilled in scalable Java backend development with Spring Boot, Microservices, REST APIs, Redis, Kafka, RabbitMQ, and Apache Solr. 
+            Passionate about building clean, maintainable, and production-grade distributed systems.
+          </p>
+          <p class="mt-6 text-gray-400">
+            Currently based in Tenkasi, Tamil Nadu, India.
+          </p>
+        </div>
+        <div class="bg-[#111827] p-10 rounded-3xl border border-white/10">
+          <h3 class="text-emerald-400 mb-6 text-xl">Quick Facts</h3>
+          <div class="space-y-6">
+            <div class="flex justify-between">
+              <span class="text-gray-400">Location</span>
+              <span>Tenkasi, Tamil Nadu</span>
+            </div>
+            <div class="flex justify-between">
+              <span class="text-gray-400">Education</span>
+              <span>B.E Mechanical Engineering</span>
+            </div>
+            <div class="flex justify-between">
+              <span class="text-gray-400">Current Role</span>
+              <span>Java Developer @ Iprotecs Solutions</span>
+            </div>
+          </div>
+        </div>
       </div>
+    </div>
+  </section>
 
+  <!-- SKILLS & EXPERIENCE -->
+  <section id="skills" class="py-24 bg-[#0a0f14]">
+    <div class="max-w-7xl mx-auto px-6">
+      <h2 class="text-5xl font-bold heading-font text-center mb-16">Skills & Experience</h2>
       
-
-      <div class="metrics-grid">
-
-        <div class="metric-card" data-aos="fade-up">
-          <h3>15+</h3>
-          <p>REST APIs Designed</p>
-        </div>
-
-        <div class="metric-card" data-aos="fade-up" data-aos-delay="100">
-          <h3>Redis</h3>
-          <p>Caching Optimizations</p>
-        </div>
-
-        <div class="metric-card" data-aos="fade-up" data-aos-delay="200">
-          <h3>Kafka + RabbitMQ</h3>
-          <p>Async Event Pipelines</p>
-        </div>
-
-        <div class="metric-card" data-aos="fade-up" data-aos-delay="300">
-          <h3>Microservices</h3>
-          <p>Distributed Systems</p>
-        </div>
-
-      </div>
-
-      <div class="terminal-card" data-aos="fade-up">
-<pre id="terminalText">
-
-✓ Spring Boot APIs initialized
-✓ Redis caching enabled
-✓ Kafka stream connected
-✓ RabbitMQ messaging active
-✓ Apache Solr indexing online
-✓ Keycloak SSO configured
-
-</pre>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- About -->
-  <section id="about" class="about section">
-    <div class="container narrow" data-aos="fade-up">
-      <div class="section-title">
-        <p>ABOUT</p>
-        <h2>Engineer Mindset</h2>
-      </div>
-
-      <p class="about-text">
-        Software Engineer skilled in scalable Java backend development with
-        Spring Boot, Microservices, REST APIs, Redis caching, Kafka,
-        RabbitMQ, Apache Solr and distributed system architecture.
-        Focused on building clean, maintainable and production-grade systems.
-      </p>
-    </div>
-  </section>
-
-  <!-- Experience -->
-  <section id="experience" class="experience section">
-    <div class="container">
-      <div class="section-title">
-        <p>WORK EXPERIENCE</p>
-        <h2>Professional Journey</h2>
-      </div>
-
-      <div class="timeline">
-
-        <div class="timeline-item" data-aos="fade-right">
-          <div class="timeline-content">
-            <span class="timeline-date">2025 — Present</span>
-            <h3>Iprotecs Solutions Pvt Ltd</h3>
-            <h4>Java Developer</h4>
-            <p>
-              Built scalable APIs, Redis-backed auth caching, RabbitMQ async
-              flows, Kafka systems, Solr indexing, and enterprise SSO routing
-              with Keycloak + Azure AD + Okta.
-            </p>
-
-            <div class="stack">
-              <i class="devicon-java-plain colored"></i>
-              <i class="devicon-spring-plain colored"></i>
-              <i class="devicon-redis-plain colored"></i>
-              <i class="devicon-rabbitmq-original colored"></i>
-              <i class="devicon-apachekafka-original colored"></i>
-              <i class="devicon-python-plain colored"></i>
+      <div class="grid md:grid-cols-12 gap-10">
+        <!-- Skills -->
+        <div class="md:col-span-5 space-y-10">
+          <div>
+            <h3 class="text-xl font-semibold mb-6 text-emerald-400">SOFTWARE SKILLS</h3>
+            <div class="space-y-8">
+              <div>
+                <div class="flex justify-between mb-2">
+                  <span>Spring Boot</span>
+                  <span>95%</span>
+                </div>
+                <div class="skill-bar"><div class="skill-progress w-[95%]"></div></div>
+              </div>
+              <div>
+                <div class="flex justify-between mb-2">
+                  <span>Kafka & RabbitMQ</span>
+                  <span>90%</span>
+                </div>
+                <div class="skill-bar"><div class="skill-progress w-[90%]"></div></div>
+              </div>
+              <div>
+                <div class="flex justify-between mb-2">
+                  <span>Redis Caching</span>
+                  <span>88%</span>
+                </div>
+                <div class="skill-bar"><div class="skill-progress w-[88%]"></div></div>
+              </div>
+              <div>
+                <div class="flex justify-between mb-2">
+                  <span>Microservices</span>
+                  <span>85%</span>
+                </div>
+                <div class="skill-bar"><div class="skill-progress w-[85%]"></div></div>
+              </div>
             </div>
           </div>
         </div>
 
-        <div class="timeline-item" data-aos="fade-left">
-          <div class="timeline-content">
-            <span class="timeline-date">2023 — 2025</span>
-            <h3>T-Machine Software Solutions</h3>
-            <h4>Associate Software Engineer</h4>
-            <p>
-              Developed Spring Boot APIs, Redis caching, Kafka audit logging,
-              Agile sprint delivery, and TDD collaboration with QA teams.
-            </p>
+        <!-- Experience -->
+        <div class="md:col-span-7">
+          <h3 class="text-xl font-semibold mb-8 text-emerald-400">EXPERIENCE</h3>
+          <div class="space-y-10">
+            <div class="bg-[#111827] p-8 rounded-3xl border border-white/10">
+              <div class="flex justify-between mb-4">
+                <div>
+                  <h4 class="text-xl font-semibold">Iprotecs Solutions Pvt Ltd</h4>
+                  <p class="text-emerald-400">Java Developer • Aug 2025 - Present</p>
+                </div>
+              </div>
+              <p class="text-gray-300">Building scalable APIs, Redis caching, RabbitMQ async flows, Kafka systems, and enterprise SSO solutions.</p>
+            </div>
 
-            <div class="stack">
-              <i class="devicon-java-plain colored"></i>
-              <i class="devicon-spring-plain colored"></i>
-              <i class="devicon-redis-plain colored"></i>
-              <i class="devicon-apachekafka-original colored"></i>
-              <i class="devicon-git-plain colored"></i>
+            <div class="bg-[#111827] p-8 rounded-3xl border border-white/10">
+              <div class="flex justify-between mb-4">
+                <div>
+                  <h4 class="text-xl font-semibold">T-Machine Software Solutions</h4>
+                  <p class="text-emerald-400">Associate Software Engineer • Jul 2023 - Jun 2025</p>
+                </div>
+              </div>
+              <p class="text-gray-300">Developed REST APIs using Spring Boot, implemented Redis caching, and integrated Kafka for event-driven systems.</p>
             </div>
           </div>
         </div>
-
       </div>
     </div>
   </section>
 
-  <!-- Skills -->
-  <section id="skills" class="skills section">
-    <div class="container">
-      <div class="section-title">
-        <p>TECH STACK</p>
-        <h2>Core Technologies</h2>
-      </div>
-
-      <div class="icon-cloud">
-        <i class="devicon-java-plain colored"></i>
-        <i class="devicon-spring-plain colored"></i>
-        <i class="devicon-mysql-plain colored"></i>
-        <i class="devicon-postgresql-plain colored"></i>
-        <i class="devicon-redis-plain colored"></i>
-        <i class="devicon-apachekafka-original colored"></i>
-        <i class="devicon-rabbitmq-original colored"></i>
-        <i class="devicon-python-plain colored"></i>
-        <i class="devicon-git-plain colored"></i>
-        <i class="devicon-github-original colored"></i>
-      </div>
-    </div>
-  </section>
-
-  <!-- Projects -->
-  <section id="projects" class="projects section">
-    <div class="container">
-      <div class="section-title">
-        <p>PROJECTS</p>
-        <h2>Selected Work</h2>
-      </div>
-
-      <div class="project-grid">
-
-        <div class="project-card" data-aos="fade-up">
-          <h3>Backend Blog Management System</h3>
-          <p>
-            Multi-role secure backend using JWT auth, BCrypt encryption,
-            Redis caching, analytics APIs, moderation workflows,
-            and scalable modular architecture.
-          </p>
+  <!-- PROJECTS -->
+  <section id="projects" class="py-24 bg-[#0a0f14]">
+    <div class="max-w-7xl mx-auto px-6">
+      <h2 class="text-5xl font-bold heading-font text-center mb-16">Selected Projects</h2>
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="bg-[#111827] p-10 rounded-3xl border border-white/10 hover:border-emerald-400/30 transition">
+          <h3 class="text-2xl font-semibold mb-4">Backend Blog Management System</h3>
+          <p class="text-gray-400 mb-6">Secure multi-role backend with JWT, Redis caching, moderation, and analytics.</p>
+          <div class="text-emerald-400 text-sm">Java • Spring Boot • Redis • MySQL</div>
         </div>
-
-        <div class="project-card" data-aos="fade-up" data-aos-delay="100">
-          <h3>Event Booking Application</h3>
-          <p>
-            Secure event management platform using Spring Boot,
-            JWT auth, RBAC, relational schema design and
-            service-repository architecture.
-          </p>
+        <div class="bg-[#111827] p-10 rounded-3xl border border-white/10 hover:border-emerald-400/30 transition">
+          <h3 class="text-2xl font-semibold mb-4">Event Booking Application</h3>
+          <p class="text-gray-400 mb-6">Complete event management system with role-based access and optimized database design.</p>
+          <div class="text-emerald-400 text-sm">Spring Boot • JPA • JWT • MySQL</div>
         </div>
-
       </div>
     </div>
   </section>
 
- 
-
-
-
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script src="script.js"></script>
-</body>
-  </html>
-<section id="experience" class="container">
-  <h2>Experience</h2>
-
-  <div class="card">
-    <h3>Iprotecs Solutions Pvt Ltd</h3>
-    <span>Java Developer | Aug 2025 – Present</span>
-    <ul>
-      <li>Optimized authentication using Redis caching.</li>
-      <li>Implemented role-based access using Spring Security.</li>
-      <li>Built async systems using RabbitMQ with DLQ.</li>
-      <li>Integrated Solr & Kafka for scalable processing.</li>
-    </ul>
-  </div>
-
-  <div class="card">
-    <h3>T-Machine Software Solutions</h3>
-    <span>Associate Software Engineer | Jul 2023 – Jun 2025</span>
-    <ul>
-      <li>Developed REST APIs using Spring Boot.</li>
-      <li>Improved performance using Redis caching.</li>
-      <li>Integrated Kafka for logging and tracking.</li>
-      <li>Worked in Agile & TDD environments.</li>
-    </ul>
-  </div>
-
-</section>
-
-<section id="projects" class="container">
-  <h2>Projects</h2>
-
-  <div class="card">
-    <h3>Blog Management System</h3>
-    <ul>
-      <li>JWT authentication & role-based access.</li>
-      <li>Redis caching improved performance by 60%.</li>
-      <li>15+ REST APIs with clean architecture.</li>
-    </ul>
-  </div>
-
-  <div class="card">
-    <h3>Event Booking Application</h3>
-    <ul>
-      <li>Spring Boot + JPA based backend.</li>
-      <li>Role-based authentication with JWT.</li>
-      <li>Optimized relational DB schema.</li>
-    </ul>
-  </div>
-
-</section>
-
-<section id="skills" class="container">
-  <h2>Skills</h2>
-  <p>
-    Java, SQL, Spring Boot, Spring Security, JPA, Hibernate, MySQL, PostgreSQL,
-    Redis, Kafka, RabbitMQ, Solr, Flink, REST APIs, Git, Maven
-  </p>
-</section>
-
-<section id="education" class="container">
-  <h2>Education</h2>
-  <p>
-    B.E Mechanical Engineering — P.S.R Engineering College (2019–2023)<br/>
-    CGPA: 8.038
-  </p>
-</section>
-
- <!-- Contact -->
-  <section id="contact" class="contact section">
-    <div class="container narrow center">
-      <div class="section-title">
-        <p>CONTACT</p>
-        <h2>Let's Build Something</h2>
-      </div>
-
-      <p>
-        Interested in backend engineering opportunities,
-        distributed systems, or scalable architecture work.
-      </p>
-
-      <a href="mailto:iamabhimanyu38@gmail.com" class="btn btn-primary">
-        Contact Me
+  <!-- CONTACT -->
+  <section class="py-24 bg-gradient-to-b from-[#0a0f14] to-black">
+    <div class="max-w-4xl mx-auto text-center px-6">
+      <h2 class="text-5xl font-bold heading-font mb-6">Let's Build Something Great</h2>
+      <p class="text-xl text-gray-400 mb-10">Open to backend engineering opportunities and interesting collaborations.</p>
+      <a href="mailto:iamabhimanyu38@gmail.com" 
+         class="inline-block px-12 py-5 bg-emerald-500 hover:bg-emerald-600 text-xl font-semibold rounded-3xl transition">
+        Get In Touch
       </a>
     </div>
   </section>
 
-  <footer class="footer">
-    <p>© 2026 Abhimanyu V • Built with engineering precision</p>
+  <footer class="py-8 text-center text-gray-500 border-t border-white/10">
+    <p>© 2026 Abhimanyu V • Built with passion for backend systems</p>
   </footer>
 
-<script src="script.js"></script>
 </body>
 </html>
